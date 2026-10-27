@@ -21,3 +21,6 @@ build-backend = "uv_build"
 dev = [
     "pytest>=9.1.1",
 ]
+
+[project.scripts]
+logi-camera-mcp = "logi_camera_mcp.server:main"
