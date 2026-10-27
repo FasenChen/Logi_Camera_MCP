@@ -60,6 +60,11 @@ def test_numeric_string_camera_is_index(fake_camera, tmp_path):
     assert fake_camera == [0]
 
 
+def test_blank_camera_uses_default_logi(fake_camera, tmp_path):
+    call("capture_image", {"camera": " ", "save_dir": str(tmp_path)})
+    assert fake_camera == [1]
+
+
 def test_missing_reference_fails_before_capture(fake_camera, tmp_path):
     with pytest.raises(ToolError, match="not found"):
         call("capture_image", {"reference_path": str(tmp_path / "nope.png"), "save_dir": str(tmp_path)})

@@ -32,6 +32,9 @@ def capture_image(camera: str | int | None = None, reference_path: str | None = 
     """
     # Validate the reference before opening the camera so a bad path fails fast.
     reference = read_image(reference_path) if reference_path else None
+    if isinstance(camera, str):
+        # Clients often send "" for an omitted optional arg; blank means default camera.
+        camera = camera.strip() or None
     if isinstance(camera, str) and camera.isdigit():
         camera = int(camera)
     frame = capture_frame(resolve_camera(camera, list_devices()))
