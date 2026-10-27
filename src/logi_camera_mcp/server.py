@@ -54,3 +54,7 @@ def capture_image(camera: str | int | None = None, reference_path: str | None = 
 
 def main() -> None:
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()
