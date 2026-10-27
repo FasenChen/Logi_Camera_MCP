@@ -1,0 +1,23 @@
+[project]
+name = "logi-camera-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "重逢时", email = "190774719@qq.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "mcp==1.29.0",
+    "opencv-python>=5.0.0.93",
+    "pygrabber>=0.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
